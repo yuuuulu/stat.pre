@@ -10,7 +10,7 @@ editor: visual
 
 For many points, there are many possible regression functions f (nonparametric) so it is useful to restrict to simple functions described by a few parameters.
 
-Though true regression function are never linear, we assume the dependence of Y on $X_1$...$X_n$ is linear.
+Though true regression functions are never linear, we assume the dependence of Y on $X_1$...$X_n$ is linear.
 
 regression function: x----\> f(x) : $$ E[Y|X=x]= \int yh(y|x)dy$$ (ps: the conditional median:m(x) $$\int_{-\infty}^{m(x)}\ h(y|x)dy=1/2$$)
 
