@@ -67,7 +67,8 @@ Instead of linear OLS regression we use something called logistic regression, wh
 ML-LRT-compare the maximum of the likelihood function for each model
 
 #### cross validation
-### rrr
+
+### r example
 
 ```{r}
 require(ISLR)
