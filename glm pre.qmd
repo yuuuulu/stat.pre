@@ -67,7 +67,8 @@ Instead of linear OLS regression we use something called logistic regression, wh
 ML-LRT-compare the maximum of the likelihood function for each model
 
 #### cross validation
-
+###r example of logistic regression with variable selection and model selection
+####Check the goodness of fit----Hosmer-Lemeshow GOF test is the most widely used for logistic regression model.
 ### r example
 
 ```{r}
