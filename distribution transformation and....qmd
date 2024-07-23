@@ -430,6 +430,150 @@ $$ (ps:\$
 ```
 \
 
+
+
+#PDF functions's transformation(from books)
+
+
+# Standard normal distribution
+
+Pdf : $f(x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}}$\
+
+# Chi-square distribution
+
+
+
+
+
+## From standard normal distribution $f(x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}}$, we want to get Chi-square distribution $f(x; k) = \frac{1}{2^{k/2} \Gamma(k/2)} x^{k/2 - 1} e^{-x/2}$\
+
+Assuming that $Z \sim N(0, 1)$\
+$W=Z^2$\
+So we can deduce the pdf for the variable W $$
+\begin{align}
+f_W(w)&=Pr(Z^2=w)\\
+& =f_Z(\sqrt{w}) \left| \frac{d(\sqrt{w})}{dw} \right| + f_Z(-\sqrt{w}) \left| \frac{d(-\sqrt{w})}{dw} \right|\\
+&=2 \cdot \frac{1}{\sqrt{2\pi}} e^{-w / 2} \cdot \frac{1}{2\sqrt{w}} = \frac{1}{\sqrt{2\pi w}} e^{-w / 2}\\
+\end{align}
+$$
+
+$\Gamma(z) = \int_0^\infty t^{z-1} e^{-t} \, dt$\
+$\Gamma(1/2)$=$\sqrt(\pi)$,we can know that $W\sim \chi^2(1)$\
+
+Now, we can introduce the variable Y.\
+$Y=\sum_{i=1}^k Z_i^2$ ($Z_i$ is independent of each other)\
+We want to get the mgf of Y $$
+\begin{align}
+M_Y(t)&=E[e^{tY}]\\
+& =E[e^{tZ_1^2}e^{tZ_2^2}...e^{tZ_k^2}]\\
+& =E[e^{tZ_1^2}]E[e^{tZ_2^2}]...E[e^{tZ_k^2}] \\
+& = \prod_{i=1}^k M_{Z_i^2}(t)\\
+&=(1-2t)^{-r1/2}(1-2t)^{-r2/2}...(1-2t)^{-rk/2}\\
+& =(1-2t)^{-\sum_{i=1}^kri/2}\\
+\end{align}
+$$ Because the mgf of Chi-square function is $(1-2t)^{-r/2}$\
+r is the degree of freedom of this chi-square function\
+So $Y\sim \chi^2(r1+r2+...+rk)$\
+r1,r2...rk represents the degree of freedom of every single sample\
+Here, df=1 for every sample
+
+# Student- t distribution
+
+
+
+
+## From standard normal distribution $f(x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}}$, we want to get Student- t distribution $f(t) = \frac{\Gamma \left(\frac{\nu+1}{2}\right)}{\sqrt{\nu \pi} \, \Gamma \left(\frac{\nu}{2}\right)} \left(1 + \frac{t^2}{\nu}\right)^{-\frac{\nu+1}{2}}$, where $\Gamma$ is the gamma function and $\nu$ is the degrees of freedom.\
+
+Given two independent variables Z and V ($Z \sim N(0, 1)$ & $V\sim \chi^2(\nu)$), then we construct a new variable $T=\frac{Z}{\sqrt(V/\nu)}$.\
+The joint pdf is $$
+g(z,v)=\frac{1}{\sqrt{2\pi}} e^{-\frac{z^2}{2}}\frac{1}{2^{\nu/2} \Gamma(\nu/2)} v^{\nu/2 - 1} e^{-v/2}
+$$ Cdf of T is given by $$
+\begin{align}
+F(t) & =Pr(\frac{Z}{\sqrt(V/\nu)}\leq t)\\
+& =Pr(Z\leq {\sqrt(V/\nu)}t)\\
+& =\int_{0}^{\infty} \int_{-\infty}^{\sqrt(V/\nu)t} g(z,v) \, dz \, dv
+\end{align}
+$$ Simplify F(t) $$
+F(t)=\frac{1}{\sqrt{\pi}\Gamma(\nu/2)}\int_{0}^{\infty}[\int_{-\infty}^{\sqrt(V/\nu)t} \frac{e^{-z^2/2}}{2^\frac{\nu+1}{2}}dz]v^{\frac{\nu}{2}-1}e^{-\frac{v}{2}}dv
+$$
+
+To get pdf, we will differentiate F(t) $$
+\begin{align}
+f(t) &=F'(t)=\frac{1}{\sqrt{\pi}\Gamma(\nu/2)}\int_{0}^{\infty} \frac{e^{-(v/2)(t^2/\nu)}}{2^{\frac{\nu+1}{2}}}\sqrt\frac{v}{\nu}v^{\nu/2-1}e^{-\frac{v}{2}}dv\\
+&=\frac{1}{\sqrt{\pi\nu}\Gamma(\nu/2)}\int_{0}^{\infty}\frac{v^{(\nu+1)/2-1}}{2^{(\nu+1)/2}}e^{-(\nu/2)(1+t^2/\nu)}dv
+\end{align}
+$$ We need to make the change of variables: $y=(1+t^2/\nu)v$\
+And we need to change dv: $\frac{dv}{dy}=\frac{1}{1+t^2/\nu}$
+
+$$
+\begin{align}
+f(t)&=\frac{\Gamma[(\nu+1)/2]}{\sqrt{\pi\nu}\Gamma(\nu/2)}[\frac{1}{(1+t^2/\nu)^{(\nu+1)/2}}]\int_{0}^{\infty}\frac{y^{(\nu+1)/2-1}}{\Gamma[(\nu+1)/2]2^{(\nu+1)/2}}e^{-y/2}dy
+\end{align}
+$$ This part $\int_{0}^{\infty}\frac{y^{(\nu+1)/2-1}}{\Gamma[(\nu+1)/2]2^{(\nu+1)/2}}e^{-y/2}dy$ is equal to 1, because this part is the whole area under the chi-square distribution with $\nu+1$ degrees of freedom. So, the pdf for T can be written as follows $$
+f(t)=\frac{\Gamma[(\nu+1)/2]}{\sqrt{\pi\nu}\Gamma(\nu/2)}\frac{1}{(1+t^2/\nu)^{(\nu+1)/2}}
+$$
+
+# F-distribution
+
+
+
+
+## We will do some trnsformation on chi-square distribution to get F-distribution
+
+Assuming that we have two independent random variables $$
+X \sim \chi^2(n_1) \quad and\quad  Y \sim \chi^2(n_2)\
+$$ Now,we will define a new variable F $$
+F = \frac{(X / n_1)}{(Y / n_2)}
+$$ This looks a little complex, so let's do some simplification. $$
+U = \frac{X}{n_1} \quad \text{and} \quad V = \frac{Y}{n_2}\
+$$
+
+So, $F = \frac{U}{V}$.\
+Because, X and Y are independent of each other. Obviously, U and V are also independent of each other.\
+
+$$
+f_{U,V}(u,v) = f_U(u) f_V(v)
+$$ $$
+f_U(u) = \frac{(n_1 u)^{n_1/2 - 1} e^{-n_1 u/2}}{2^{n_1/2} \Gamma(n_1/2)}
+$$ $$
+f_V(v) = \frac{(n_2 v)^{n_2/2 - 1} e^{-n_2 v/2}}{2^{n_2/2} \Gamma(n_2/2)}
+$$ To find the joint density function of F & V, we use Jacobian transformation $$
+J =\left| \frac{\partial(U,V)}{\partial(F,V)} \right| = \left| \begin{matrix}
+\frac{\partial U}{\partial F} & \frac{\partial U}{\partial V} \\
+\frac{\partial V}{\partial F} & \frac{\partial V}{\partial V}
+\end{matrix} \right| = \left| \begin{matrix}
+V & F \\
+0 & 1
+\end{matrix} \right| = V
+$$ $$
+f_{F,V}(f,v) = f_{U,V}(u,v) \left| \frac{\partial(u,v)}{\partial(f,v)} \right|= f_{U,V}(u,v)v
+$$ Then, we substitute$f_U(u)$ and $f_V(v)$ into $f_{F,V}(f,v)$ $$
+f_{F,V}(f,v) = \frac{(n_1 u)^{n_1/2 - 1} e^{-n_1 u/2}}{2^{n_1/2} \Gamma(n_1/2)} \cdot \frac{(n_2 v)^{n_2/2 - 1} e^{-n_2 v/2}}{2^{n_2/2} \Gamma(n_2/2)} \cdot v
+$$ Use the condition u=fv $$
+\begin{align}
+f_{F,V}(f,v) &= \frac{(n_1 fv)^{n_1/2 - 1} e^{-n_1 fv/2}}{2^{n_1/2} \Gamma(n_1/2)} \cdot \frac{(n_2 v)^{n_2/2 - 1} e^{-n_2 v/2}}{2^{n_2/2} \Gamma(n_2/2)} \cdot v\\
+& =\frac{(n_1 f v)^{n_1/2 - 1} e^{-n_1 f v/2}}{2^{n_1/2} \Gamma(n_1/2)} \cdot \frac{(n_2 v)^{n_2/2 - 1} e^{-n_2 v/2}}{2^{n_2/2} \Gamma(n_2/2)} \cdot v\\
+& = \frac{n_1^{n_1/2-1} f^{n_1/2 - 1} v^{n_1/2 - 1} e^{-n_1 f v/2}}{2^{n_1/2} \Gamma(n_1/2)} \cdot \frac{n_2^{n_2/2-1} v^{n_2/2 - 1} e^{-n_2 v/2}}{2^{n_2/2} \Gamma(n_2/2)} \cdot v\\
+& = \frac{n_1^{n_1/2-1} n_2^{n_2/2-1} f^{n_1/2 - 1} v^{(n_1 + n_2)/2 - 1} e^{-(n_1 f + n_2) v/2}}{2^{(n_1 + n_2)/2} \Gamma(n_1/2) \Gamma(n_2/2)}
+\end{align}
+$$ We will integrate this density function with respect to V $$
+\begin{align}
+f_F(f) &= \int_0^\infty f_{F,V}(f,v) dv\\
+&= \int_0^\infty \frac{n_1^{n_1/2-1} n_2^{n_2/2-1} f^{n_1/2 - 1} v^{(n_1 + n_2)/2 - 1} e^{-(n_1 f + n_2) v/2}}{2^{(n_1 + n_2)/2} \Gamma(n_1/2) \Gamma(n_2/2)} dv\\
+\end{align}
+$$ Let's do some substitutions to make it look simpler $$
+\begin{align}
+c = \frac{n_1 f + n_2}{2}
+\end{align}
+$$ This is the definition of Gamma function $$
+\int_0^\infty v^{(n_1 + n_2)/2 - 1} e^{-c v} dv = \frac{\Gamma((n_1 + n_2)/2)}{c^{(n_1 + n_2)/2}}
+$$
+
+Then $$
+f_F(f) = \frac{n_1^{n_1/2-1} n_2^{n_2/2-1} f^{n_1/2 - 1}}{2^{(n_1 + n_2)/2} \Gamma(n_1/2) \Gamma(n_2/2)} \cdot \frac{\Gamma((n_1 + n_2)/2)}{\left(\frac{n_1 f + n_2}{2}\right)^{(n_1 + n_2)/2}}
+$$ Let's rewrite it in an approximate F-distribution pdf form $$
+f_F(f) = \frac{n_1^{n_1/2-1} n_2^{n_2/2-1} f^{n_1/2 - 1} \Gamma((n_1 + n_2)/2)}{2^{(n_1 + n_2)/2} \Gamma(n_1/2) \Gamma(n_2/2)} \cdot \left(\frac{2}{n_1 f + n_2}\right)^{(n_1 + n_2)/2}
+$$
 ## Some Interesting Things
 
 ### LOTUS(The Law of the Unconscious Statistician)
