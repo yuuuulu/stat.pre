@@ -1,5 +1,5 @@
 ---
-title: "Surf2024"
+title: "Surf2024-1st day"
 format: html
 editor: visual
 bibliography: references.bib
@@ -627,6 +627,21 @@ E\[$X^2$\]=$I_1^2$+...+$I_n^2$+2$I_1I_2$+2$I_1I_3$+...+2$I_{n-1}I_n$
 so E\[$X^2$\]=nE($I_1^2$)+2$\binom{n}{2}$E\[$I_1$ $I_2$\]=nP+n(n-1)$P^2$
 
 So Var(x)=np+$n^2p^2$-n$p^2$-$n^2p^2$=np(1-p)=npq)
+
+
+## 重期望公式The Law of Total Expectation
+$$E(X) = E[E(X|Y)]$$
+This law allows us to calculate the expectation of \(X\) by first computing the conditional expectation of \(X\) given \(Y\) and then taking the expectation of that conditional expectation.
+
+For continuous random variables, the law of total expectation can be written as:
+
+$$
+E(X) = \int_{-\infty}^{\infty} E(X|Y=y) f_Y(y) \, dy= E[E(X|Y)]
+$$
+calculate many small averages and then calculate total average to get real average-----useful in practice
+
+
+
 
 It is more complicated to compute Var of Hypergeometric Distribution(lecture 15's beginning):
 
