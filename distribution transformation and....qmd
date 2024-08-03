@@ -549,6 +549,134 @@ f_F(f) = \frac{n_1^{n_1/2-1} n_2^{n_2/2-1} f^{n_1/2 - 1}}{2^{(n_1 + n_2)/2} \Gam
 $$ Let's rewrite it in an approximate F-distribution pdf form $$
 f_F(f) = \frac{n_1^{n_1/2-1} n_2^{n_2/2-1} f^{n_1/2 - 1} \Gamma((n_1 + n_2)/2)}{2^{(n_1 + n_2)/2} \Gamma(n_1/2) \Gamma(n_2/2)} \cdot \left(\frac{2}{n_1 f + n_2}\right)^{(n_1 + n_2)/2}
 $$
+### beta and Gamma
+When considering the product of two Gamma functions $$(\Gamma(a) \Gamma(b))$$, we can write it as two independent integrals:
+
+$$
+\Gamma(a) \Gamma(b) = \left( \int_0^\infty t^{a-1} e^{-t} \, dt \right) \left( \int_0^\infty s^{b-1} e^{-s} \, ds \right)
+$$
+
+To convert this product into a double integral, we can use a change of variables. Consider using polar coordinates in the two independent integrals, which allows us to use certain integration techniques to simplify them. First, we transform the integration region from Cartesian coordinates to polar coordinates:
+
+$$
+t = r \cos \theta, \quad s = r \sin \theta
+$$
+
+The Jacobian determinant is $$r$$, so the integral can be rewritten as:
+
+$$
+\Gamma(a) \Gamma(b) = \int_0^\infty \int_0^\infty t^{a-1} e^{-t} s^{b-1} e^{-s} \, dt \, ds
+$$
+
+Using the polar coordinate transformation, the integral becomes:
+
+$$
+= \int_0^\frac{\pi}{2} \int_0^\infty (r \cos \theta)^{a-1} e^{-r \cos \theta} (r \sin \theta)^{b-1} e^{-r \sin \theta} r \, dr \, d\theta
+$$
+
+Separating all $$r$$ and $$\theta$$ related terms:
+
+$$
+= \int_0^\frac{\pi}{2} (\cos \theta)^{a-1} (\sin \theta)^{b-1} \, d\theta \int_0^\infty r^{a+b-1} e^{-r(\cos \theta + \sin \theta)} \, dr
+$$
+
+First, compute the $$r$$ integral part:
+
+$$
+\int_0^\infty r^{a+b-1} e^{-r(\cos \theta + \sin \theta)} \, dr = \frac{\Gamma(a+b)}{(\cos \theta + \sin \theta)^{a+b}}
+$$
+
+Next, compute the $$\theta$$ integral part:
+
+$$
+\int_0^\frac{\pi}{2} (\cos \theta)^{a-1} (\sin \theta)^{b-1} \, d\theta = B(a, b)
+$$
+
+where $$B(a, b)$$ is the Beta function, defined as:
+
+$$
+B(a, b) = \int_0^1 t^{a-1} (1-t)^{b-1} \, dt
+$$
+
+Therefore, we get:
+
+$$
+\Gamma(a) \Gamma(b) = \frac{\Gamma(a+b)}{(\cos \theta + \sin \theta)^{a+b}} \cdot B(a, b)
+$$
+
+Since $$\cos \theta + \sin \theta = 1$$ (in polar coordinates), we have:
+
+$$
+\Gamma(a) \Gamma(b) = \Gamma(a+b) B(a, b)
+$$
+
+Thus, the double integral form of the Gamma function product directly comes from the polar transformation and the application of the Beta function. This is an important mathematical technique used to simplify complex integrals and functional relationships.
+
+## Why is the integral result as shown?
+
+The given integral,
+
+$$
+\int_0^\infty r^{a+b-1} e^{-r (\cos \theta + \sin \theta)} \, dr,
+$$
+
+can be evaluated using the definition of the Gamma function. The Gamma function $$\Gamma(z)$$ is defined as:
+
+$$
+\Gamma(z) = \int_0^\infty t^{z-1} e^{-t} \, dt.
+$$
+
+To see why the integral can be expressed in terms of the Gamma function, let's rewrite the integral in a form that matches the Gamma function's definition. The integral has the form:
+
+$$
+\int_0^\infty r^{a+b-1} e^{-r (\cos \theta + \sin \theta)} \, dr.
+$$
+
+Let's set $$t = r (\cos \theta + \sin \theta)$$, then $$r = \frac{t}{\cos \theta + \sin \theta}$$ and $$dr = \frac{dt}{\cos \theta + \sin \theta}$$. Substituting these into the integral gives:
+
+$$
+\int_0^\infty \left( \frac{t}{\cos \theta + \sin \theta} \right)^{a+b-1} e^{-t} \cdot \frac{dt}{\cos \theta + \sin \theta}.
+$$
+
+Simplifying inside the integral:
+
+$$
+\int_0^\infty \frac{t^{a+b-1}}{(\cos \theta + \sin \theta)^{a+b}} e^{-t} \, dt.
+$$
+
+Since $$(\cos \theta + \sin \theta)^{a+b}$$ is a constant with respect to $$t$$, it can be factored out of the integral:
+
+$$
+\frac{1}{(\cos \theta + \sin \theta)^{a+b}} \int_0^\infty t^{a+b-1} e^{-t} \, dt.
+$$
+
+The integral
+
+$$
+\int_0^\infty t^{a+b-1} e^{-t} \, dt
+$$
+
+is recognized as the Gamma function $$\Gamma(a+b)$$. Thus, we have:
+
+$$
+\frac{1}{(\cos \theta + \sin \theta)^{a+b}} \Gamma(a+b).
+$$
+
+Therefore,
+
+$$
+\int_0^\infty r^{a+b-1} e^{-r (\cos \theta + \sin \theta)} \, dr = \frac{\Gamma(a+b)}{(\cos \theta + \sin \theta)^{a+b}}.
+$$
+
+This demonstrates why the integral is evaluated as shown:
+
+$$
+\int_0^\infty r^{a+b-1} e^{-r (\cos \theta + \sin \theta)} \, dr = \frac{\Gamma(a+b)}{(\cos \theta + \sin \theta)^{a+b}}.
+$$
+(method 2 for integral calculation: x=uv,y=u(1-v) J=-u)
+
+
+
 ## Some Interesting Things
 
 ### LOTUS(The Law of the Unconscious Statistician)
