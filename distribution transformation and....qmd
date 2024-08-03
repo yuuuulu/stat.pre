@@ -5,32 +5,7 @@ editor: visual
 bibliography: references.bib
 ---
 
-# Homepage
-transformation, both functions and samples(2 ways) are interesting!
 
-## Citation
-
-$$
-\int_{-\infty}^{\infty}\exp(-x^2) dx =\sqrt{\pi}
-$$
-
-[@cox1972a] introduces the well-known cox model. While [@tibshirani1996] introduced LASSO[@casella2024]
-
-## Survival Analysis
-
-X Y CDF
-
-$$
-S(x)=1-F(x)=1-P(T\leq t)=P(T\geq t)
-$$
-
-Hazard Function
-
-$$
-h(t)=
-H(t)=\int{h(t)dt}
-S(t)=\exp
-$$
 
 ## Distribution Transformation
 
@@ -702,6 +677,68 @@ $$ and additivity.
 
 
 It is more complicated to compute Var of Hypergeometric Distribution(lecture 15's beginning):
+## relationship between possion and binomial in conditional distribution
+Suppose random variables $X$ and $Y$ are independent, and $X \sim P(\lambda_1)$, $Y \sim P(\lambda_2)$. Given that $X + Y = n$, find the conditional distribution of $X$.
+
+### Solution
+
+Since the sum of independent Poisson random variables is also a Poisson random variable, i.e., $X + Y \sim P(\lambda_1 + \lambda_2)$, we have:
+
+$$
+P(X = k \mid X + Y = n) = \frac{P(X = k, X + Y = n)}{P(X + Y = n)}
+$$
+
+Using the independence of $X$ and $Y$, this can be written as:
+
+$$
+P(X = k \mid X + Y = n) = \frac{P(X = k) P(Y = n - k)}{P(X + Y = n)}
+$$
+
+Substituting the Poisson probabilities, we get:
+
+$$
+P(X = k \mid X + Y = n) = \frac{\frac{\lambda_1^k e^{-\lambda_1}}{k!} \cdot \frac{\lambda_2^{n-k} e^{-\lambda_2}}{(n-k)!}}{\frac{(\lambda_1 + \lambda_2)^n e^{-(\lambda_1 + \lambda_2)}}{n!}}
+$$
+
+Simplifying the expression, we have:
+
+$$
+P(X = k \mid X + Y = n) = \frac{\lambda_1^k \lambda_2^{n-k}}{k! (n - k)!} \cdot \frac{n!}{(\lambda_1 + \lambda_2)^n}
+$$
+
+This simplifies further to:
+
+$$
+P(X = k \mid X + Y = n) = \binom{n}{k} \left( \frac{\lambda_1}{\lambda_1 + \lambda_2} \right)^k \left( \frac{\lambda_2}{\lambda_1 + \lambda_2} \right)^{n-k}, \quad k = 0, 1, \ldots, n
+$$
+
+Thus, given $X + Y = n$, $X$ follows a binomial distribution $b(n, p)$ where $p = \frac{\lambda_1}{\lambda_1 + \lambda_2}$.
+# Homepage
+transformation, both functions and samples(2 ways) are interesting!
+
+## Citation
+
+$$
+\int_{-\infty}^{\infty}\exp(-x^2) dx =\sqrt{\pi}
+$$
+
+[@cox1972a] introduces the well-known cox model. While [@tibshirani1996] introduced LASSO[@casella2024]
+
+## Survival Analysis
+
+X Y CDF
+
+$$
+S(x)=1-F(x)=1-P(T\leq t)=P(T\geq t)
+$$
+
+Hazard Function
+
+$$
+h(t)=
+H(t)=\int{h(t)dt}
+S(t)=\exp
+$$
 
 ## Central Limit Theorem:
 
