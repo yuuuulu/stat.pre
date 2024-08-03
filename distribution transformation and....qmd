@@ -1,5 +1,5 @@
 ---
-title: "Surf2024-1st day"
+title: "distribution transformation including multiple random variables"
 format: html
 editor: visual
 bibliography: references.bib
@@ -639,7 +639,65 @@ $$
 E(X) = \int_{-\infty}^{\infty} E(X|Y=y) f_Y(y) \, dy= E[E(X|Y)]
 $$
 calculate many small averages and then calculate total average to get real average-----useful in practice
+## Expected Value of the Maximum of Two i.i.d. Standard Normal Variables
 
+Given two i.i.d. standard normal random variables $X$ and $Y$, we want to find the expected value of $\max(X, Y)$, denoted as $E(\max(X, Y))$.
+
+The cumulative distribution function (CDF) of the standard normal distribution is denoted by $\Phi(x)$ and is defined as:
+
+$$
+\Phi(x) = P(X \leq x) = \int_{-\infty}^{x} \frac{1}{\sqrt{2\pi}} e^{-\frac{t^2}{2}} \, dt
+$$
+
+where $X$ is a standard normal random variable. $\Phi(x)$ represents the probability that $X$ is less than or equal to $x$.
+
+To compute $E(\max(X, Y))$, we can proceed as follows. Let $Z = \max(X, Y)$. The goal is to find $E(Z)$.
+
+1.  **CDF of** $Z$: $$
+    F_Z(z) = P(Z \leq z) = P(\max(X, Y) \leq z) = P(X \leq z) \cdot P(Y \leq z) = (\Phi(z))^2
+    $$
+
+2.  **PDF of** $Z$: $$
+    f_Z(z) = \frac{d}{dz} F_Z(z) = \frac{d}{dz} (\Phi(z))^2 = 2 \Phi(z) \phi(z)
+    $$ where $\phi(z)$ is the probability density function (PDF) of the standard normal distribution, i.e., $\phi(z) = \frac{1}{\sqrt{2\pi}} e^{-\frac{z^2}{2}}$.
+
+3.  **Expectation Calculation**: $$
+    E(Z) = \int_{-\infty}^{\infty} z f_Z(z) \, dz = \int_{-\infty}^{\infty} z \cdot 2 \Phi(z) \phi(z) \, dz
+    $$
+
+To simplify the integral, we use integration by parts. Let $u = \Phi(z)$, $dv = 2z \phi(z) \, dz$. Then $du = \phi(z) \, dz$ and $v = -2 \phi(z)$.
+
+Thus, $$
+\int u \, dv = uv - \int v \, du
+$$
+
+Substituting $u$ and $v$, we get: $$
+\int_{-\infty}^{\infty} 2z \Phi(z) \phi(z) \, dz = \left. 2\Phi(z) \left( -\phi(z) \right) \right|_{-\infty}^{\infty} + \int_{-\infty}^{\infty} 2 \phi(z) \phi(z) \, dz
+$$
+
+Since $\Phi(z) \phi(z)$ tends to 0 as $z$ approaches $\pm\infty$, the first term vanishes. So, we only need to calculate the second term: $$
+\int_{-\infty}^{\infty} 2 \phi(z)^2 \, dz
+$$
+
+Note that $\phi(z) = \frac{1}{\sqrt{2\pi}} e^{-\frac{z^2}{2}}$, so $\phi(z)^2 = \frac{1}{2\pi} e^{-z^2}$. Then the integral is: $$
+\int_{-\infty}^{\infty} 2 \cdot \frac{1}{2\pi} e^{-z^2} \, dz = \frac{1}{\sqrt{\pi}}
+$$
+
+Therefore, $$
+E(\max(X, Y)) = \frac{1}{\sqrt{\pi}}
+$$
+
+Thus, the expected value of the maximum of two i.i.d. standard normal random variables is:
+
+$$
+E(\max(X, Y)) = \frac{1}{\sqrt{\pi}}
+$$
+## E(max{X,Y}) N(a, $\sigma^2$)
+ E(max{X,Y})=$\sigma/ \sqrt {\pi} $
+ 
+ proof:use $$
+E(\max(X, Y)) = \frac{1}{\sqrt{\pi}}
+$$ and additivity.
 
 
 
