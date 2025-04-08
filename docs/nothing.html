@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Untitled</title>
+<title>2024 summer SURF—Survival Analysis in Poisoning</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,73 +20,52 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
-
-
-<script src="survival_analysis_files/libs/clipboard/clipboard.min.js"></script>
-<script src="survival_analysis_files/libs/quarto-html/quarto.js"></script>
-<script src="survival_analysis_files/libs/quarto-html/popper.min.js"></script>
-<script src="survival_analysis_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="survival_analysis_files/libs/quarto-html/anchor.min.js"></script>
-<link href="survival_analysis_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="survival_analysis_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="survival_analysis_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="survival_analysis_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="survival_analysis_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+}</script>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -120,94 +99,149 @@ window.Quarto = {
 
 </head>
 
-<body class="fullcontent">
+<body class="nav-fixed">
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">2024 summer SURF—Survival Analysis in Poisoning</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Homepage</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://yutong04.github.io"> 
+<span class="menu-text">our work</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./surf2024.html"> 
+<span class="menu-text">codes</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#regression-models" id="toc-regression-models" class="nav-link active" data-scroll-target="#regression-models">1. Regression Models</a>
+  <ul class="collapse">
+  <li><a href="#one-individuals-data" id="toc-one-individuals-data" class="nav-link" data-scroll-target="#one-individuals-data">One Individual’s Data</a></li>
+  <li><a href="#proportional-hazard-assumption" id="toc-proportional-hazard-assumption" class="nav-link" data-scroll-target="#proportional-hazard-assumption">Proportional Hazard Assumption</a></li>
+  <li><a href="#likelihood-function" id="toc-likelihood-function" class="nav-link" data-scroll-target="#likelihood-function">Likelihood Function</a></li>
+  </ul></li>
+  <li><a href="#product-limit-method-for-censored-data" id="toc-product-limit-method-for-censored-data" class="nav-link" data-scroll-target="#product-limit-method-for-censored-data">2. Product-Limit Method for Censored Data</a></li>
+  <li><a href="#log-rank-test-2-sample" id="toc-log-rank-test-2-sample" class="nav-link" data-scroll-target="#log-rank-test-2-sample">1. Log-Rank Test (2-Sample)</a>
+  <ul class="collapse">
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#table-for-seamlessly-handling-with-ties" id="toc-table-for-seamlessly-handling-with-ties" class="nav-link" data-scroll-target="#table-for-seamlessly-handling-with-ties">Table for Seamlessly Handling with Ties</a></li>
+  </ul></li>
+  <li><a href="#cox-1972" id="toc-cox-1972" class="nav-link" data-scroll-target="#cox-1972">2. Cox (1972)</a>
+  <ul class="collapse">
+  <li><a href="#failure-time" id="toc-failure-time" class="nav-link" data-scroll-target="#failure-time">Failure Time</a>
+  <ul class="collapse">
+  <li><a href="#discrete-case" id="toc-discrete-case" class="nav-link" data-scroll-target="#discrete-case">Discrete Case</a></li>
+  <li><a href="#likelihood-and-censoring" id="toc-likelihood-and-censoring" class="nav-link" data-scroll-target="#likelihood-and-censoring">Likelihood and Censoring</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Untitled</h1>
-</div>
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<section id="cox-model" class="level1">
-<h1>cox model</h1>
-<p><span class="citation" data-cites="cox1972">(<a href="#ref-cox1972" role="doc-biblioref">Cox 1972</a>)</span>cox # 1. Regression Models</p>
+<section id="regression-models" class="level1">
+<h1>1. Regression Models</h1>
 <section id="one-individuals-data" class="level2">
-<h2 class="anchored" data-anchor-id="one-individuals-data">1.1 One Individual’s Data</h2>
-<p>For an individual with covariates <span class="math inline">\(z_1, \dots, z_p\)</span>, the failure time is represented as <span class="math inline">\(t_i\)</span>. The failure rate, also known as the hazard function, for this individual is given by:</p>
+<h2 class="anchored" data-anchor-id="one-individuals-data">One Individual’s Data</h2>
+<p>For one individual <span class="math inline">\(z_1, \dots, z_p\)</span>, the failure time <span class="math inline">\(t_i\)</span>, the failure rate (intensity):</p>
 <p><span class="math display">\[
 \lambda(t \mid z_i) = \exp(z_i^T \beta) \times \lambda_0(t)
 \]</span></p>
-<p>Where: - <span class="math inline">\(z_i\)</span>: vector of covariates for individual <span class="math inline">\(i\)</span>, - <span class="math inline">\(\beta\)</span>: coefficient vector that needs to be estimated, - <span class="math inline">\(\lambda_0(t)\)</span>: baseline hazard function (i.e., the hazard when <span class="math inline">\(z_i = 0\)</span>).</p>
+<p>Where <span class="math inline">\(z_i\)</span> represents the variables of the individual <span class="math inline">\(i\)</span>, and <span class="math inline">\(\beta\)</span> is a vector of coefficients.</p>
 </section>
 <section id="proportional-hazard-assumption" class="level2">
-<h2 class="anchored" data-anchor-id="proportional-hazard-assumption">1.2 Proportional Hazard Assumption</h2>
-<p>Under the proportional hazard assumption, the ratio of hazard functions between two individuals with covariates <span class="math inline">\(z_i\)</span> and <span class="math inline">\(z_j\)</span> remains constant over time:</p>
+<h2 class="anchored" data-anchor-id="proportional-hazard-assumption">Proportional Hazard Assumption</h2>
+<p>Under the proportional hazard assumption, the hazard ratio between different individuals remains constant over time:</p>
 <p><span class="math display">\[
 \frac{\lambda(t \mid z_i)}{\lambda(t \mid z_j)} = \exp((z_i - z_j)^T \beta)
 \]</span></p>
-<p>This property is what makes the Cox proportional hazards model useful in survival analysis.</p>
 </section>
 <section id="likelihood-function" class="level2">
-<h2 class="anchored" data-anchor-id="likelihood-function">1.3 Likelihood Function</h2>
-<p>For censored data, the likelihood function of the hazard rate for <span class="math inline">\(n\)</span> individuals is given by:</p>
+<h2 class="anchored" data-anchor-id="likelihood-function">Likelihood Function</h2>
+<p>The likelihood function <span class="math inline">\(L(\beta)\)</span> for the hazard rate for censored data is:</p>
 <p><span class="math display">\[
-L(\beta) = \prod_{i=1}^{n} \left[ \lambda(t_i \mid z_i) \right]^{\delta_i} \exp \left( - \int_0^{t_i} \lambda(s \mid z_i) ds \right)
+L(\beta) = \prod_{i=1}^{n} \left[\lambda(t_i \mid z_i)\right]^{\delta_i} \exp \left( - \int_0^{t_i} \lambda(s \mid z_i) ds \right)
 \]</span></p>
-<p>Where: - <span class="math inline">\(t_i\)</span>: observed failure or censoring time for individual <span class="math inline">\(i\)</span>, - <span class="math inline">\(\delta_i\)</span>: event indicator for individual <span class="math inline">\(i\)</span>, where <span class="math inline">\(\delta_i = 1\)</span> if the event is observed (failure) and <span class="math inline">\(\delta_i = 0\)</span> if censored.</p>
-<p>For computational ease, the partial likelihood function, <span class="math inline">\(L_P(\beta)\)</span>, can be expressed as:</p>
+<p>For censored data:</p>
+<p><span class="math display">\[
+\delta_i =
+\begin{cases}
+1 &amp; \text{if event observed (uncensored)} \\
+0 &amp; \text{if censored}
+\end{cases}
+\]</span></p>
+<p>Thus, the partial likelihood function <span class="math inline">\(L_P(\beta)\)</span> is:</p>
 <p><span class="math display">\[
 L_P(\beta) = \prod_{i=1}^{n} \frac{\exp(z_i^T \beta)}{\sum_{j \in R(t_i)} \exp(z_j^T \beta)}
 \]</span></p>
-<p>Where: - <span class="math inline">\(R(t_i)\)</span>: the set of individuals still at risk at time <span class="math inline">\(t_i\)</span>.</p>
-<hr>
+<p>Where <span class="math inline">\(R(t_i)\)</span> is the set of individuals at risk at time <span class="math inline">\(t_i\)</span>.</p>
 </section>
 </section>
-<section id="product-limit-method-for-censored-data-kaplan-meier-estimator" class="level1">
-<h1>2. Product-Limit Method for Censored Data (Kaplan-Meier Estimator)</h1>
-<p>The Kaplan-Meier estimator is used to estimate the survival probability in the presence of censored data. For <span class="math inline">\(n\)</span> independent individuals, the survival probability is given by:</p>
+<section id="product-limit-method-for-censored-data" class="level1">
+<h1>2. Product-Limit Method for Censored Data</h1>
+<p>Assume <span class="math inline">\(n\)</span> independent individuals. The survival probability is modeled as:</p>
 <p><span class="math display">\[
 S(t) = P(T \geq t) = \prod_{j: t_j \leq t} \left(1 - \frac{d_j}{Y_j} \right)
 \]</span></p>
-<p>Where: - <span class="math inline">\(d_j\)</span>: the number of failures at time <span class="math inline">\(t_j\)</span>, - <span class="math inline">\(Y_j\)</span>: the number of individuals at risk just before time <span class="math inline">\(t_j\)</span>.</p>
-<p>This estimator assumes that censored data are randomly distributed.</p>
-<hr>
-</section>
-<section id="log-rank-test-2-sample-comparison" class="level1">
-<h1>3. Log-Rank Test (2-Sample Comparison)</h1>
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">3.1 Overview</h2>
-<p>The log-rank test is used to compare the survival distributions of two groups. It is a non-parametric test that assumes that the hazard functions are proportional.</p>
+<p>Where:</p>
 <ul>
-<li><strong>Slight advantage</strong>: Is the difference significant enough? This is determined by calculating the test statistic.</li>
-<li><strong>At first glance</strong>: This can be thought of as a generalization of the <span class="math inline">\(t\)</span>-test to survival data, where the censoring mechanism is taken into account.</li>
+<li><span class="math inline">\(d_j\)</span> is the number of failures at time <span class="math inline">\(t_j\)</span>,</li>
+<li><span class="math inline">\(Y_j\)</span> is the number of individuals at risk just before time <span class="math inline">\(t_j\)</span>.</li>
 </ul>
-<section id="sample-kaplan-meire" class="level3">
-<h3 class="anchored" data-anchor-id="sample-kaplan-meire">1-sample Kaplan-Meire</h3>
-<p>Unfolds in time</p>
-<p>conditional probability</p>
-<p>handel more on censoring data(into conditional probability)</p>
-<p>with standard error–Green wood’s formula</p>
+<p>For censored data, the hazard rate:</p>
+<p><span class="math display">\[
+\lambda_j = \frac{d_j}{Y_j}
+\]</span></p>
+<p>The likelihood function from MLE is then:</p>
+<p><span class="math display">\[
+L = \prod_{j=1}^{k} \left( \frac{d_j}{Y_j} \right)^{d_j} \left( 1 - \frac{d_j}{Y_j} \right)^{Y_j - d_j}
+\]</span></p>
 </section>
+<section id="log-rank-test-2-sample" class="level1">
+<h1>1. Log-Rank Test (2-Sample)</h1>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<ul>
+<li><strong>Slight advantage</strong>: Is it significant enough? Maybe within the noise.</li>
+<li><strong>At first glance</strong>: This can be seen as a <span class="math inline">\(t\)</span>-test (2-sample), where censoring <span class="math inline">\(\to X\)</span>.</li>
+</ul>
 </section>
-<section id="handling-ties-log-rank-test-table" class="level2">
-<h2 class="anchored" data-anchor-id="handling-ties-log-rank-test-table">3.2 Handling Ties (Log-Rank Test Table)</h2>
+<section id="table-for-seamlessly-handling-with-ties" class="level2">
+<h2 class="anchored" data-anchor-id="table-for-seamlessly-handling-with-ties">Table for Seamlessly Handling with Ties</h2>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -238,108 +272,72 @@ S(t) = P(T \geq t) = \prod_{j: t_j \leq t} \left(1 - \frac{d_j}{Y_j} \right)
 </tr>
 </tbody>
 </table>
-<p>Where: - <span class="math inline">\(d_k\)</span>: total number of deaths at time <span class="math inline">\(t_k\)</span>, - <span class="math inline">\(r_k\)</span>: number of individuals at risk at time <span class="math inline">\(t_k\)</span>, - <span class="math inline">\(d_{1k}\)</span>, <span class="math inline">\(d_{2k}\)</span>: number of deaths in group 1 and group 2 at time <span class="math inline">\(t_k\)</span>, respectively.</p>
-</section>
-<section id="test-statistic" class="level2">
-<h2 class="anchored" data-anchor-id="test-statistic">3.3 Test Statistic</h2>
-<p>To test the null hypothesis <span class="math inline">\(H_0\)</span>: No difference between survival curves (i.e., <span class="math inline">\(S_1(t) = S_2(t)\)</span>), the test statistic is computed as:</p>
+<ul>
+<li><span class="math inline">\(d_k\)</span>: death time.</li>
+<li><span class="math inline">\(r_k\)</span>: number at risk at time <span class="math inline">\(t_k\)</span>.</li>
+<li><span class="math inline">\(d_{1k}\)</span> and <span class="math inline">\(d_{2k}\)</span>: number of deaths in group 1 and group 2 respectively.</li>
+</ul>
+<p>To test the hypothesis <span class="math inline">\(H_0\)</span>: No difference between survival curves:</p>
 <p><span class="math display">\[
-W = \frac{\sum_{k=1}^{K} (O_k - E_k)}{\sqrt{\text{Var}(O_k)}}
+E(X_k) = \frac{r_{1k}}{r_k} d_k
 \]</span></p>
-<p>Where: - <span class="math inline">\(O_k\)</span>: observed number of events in group 1 at time <span class="math inline">\(t_k\)</span>, - <span class="math inline">\(E_k\)</span>: expected number of events under the null hypothesis, - <span class="math inline">\(\text{Var}(O_k)\)</span>: the variance of <span class="math inline">\(O_k\)</span>.</p>
-<p>The expectation and variance are calculated as:</p>
+<p>The test statistic:</p>
 <p><span class="math display">\[
-E(O_k) = \frac{r_{1k}}{r_k} d_k
+W = \frac{\sum_{k=1}^{K} (X_k - E(X_k))}{\sqrt{\text{Var}(X_k)}}
 \]</span></p>
+<p>Where:</p>
 <p><span class="math display">\[
-\text{Var}(O_k) = \frac{r_{1k} r_{2k} d_k (r_k - d_k)}{r_k^2 (r_k - 1)}
+\text{Var}(X_k) = \frac{r_{1k} r_{2k} d_k (r_k - d_k)}{r_k^2 (r_k - 1)}
 \]</span></p>
-<p>Under the null hypothesis:</p>
+<p>And under <span class="math inline">\(H_0\)</span>:</p>
 <p><span class="math display">\[
 W \sim N(0,1)
 \]</span></p>
-<p>The <span class="math inline">\(p\)</span>-value can be computed from this statistic to assess the significance.</p>
-<hr>
+<p>From this, the <span class="math inline">\(p\)</span>-value is calculated to determine the significance.</p>
 </section>
 </section>
-<section id="cox-1972-proportional-hazards-model" class="level1">
-<h1>4. Cox (1972) Proportional Hazards Model</h1>
+<section id="cox-1972" class="level1">
+<h1>2. Cox (1972)</h1>
 <section id="failure-time" class="level2">
-<h2 class="anchored" data-anchor-id="failure-time">4.1 Failure Time</h2>
-<p>Let <span class="math inline">\(T\)</span> be a continuous random variable representing the failure time. The survival function is defined as:</p>
+<h2 class="anchored" data-anchor-id="failure-time">Failure Time</h2>
+<p>Consider the failure time <span class="math inline">\(T\)</span> (discrete or continuous random variable). Define the survival function as:</p>
 <p><span class="math display">\[
 S(t) = P(T \geq t) = 1 - F(t)
 \]</span></p>
-<p>Where <span class="math inline">\(F(t)\)</span> is the cumulative distribution function (CDF) of <span class="math inline">\(T\)</span>.</p>
+<p>Where <span class="math inline">\(F(t)\)</span> is the distribution function.</p>
 <section id="discrete-case" class="level3">
-<h3 class="anchored" data-anchor-id="discrete-case">4.2 Discrete Case</h3>
-<p>In the discrete case, the hazard function <span class="math inline">\(\lambda(t_k)\)</span> at time <span class="math inline">\(t_k\)</span> is defined as:</p>
+<h3 class="anchored" data-anchor-id="discrete-case">Discrete Case</h3>
+<p>The failure rate <span class="math inline">\(\lambda\)</span> is defined as:</p>
 <p><span class="math display">\[
 \lambda(t_k) = \frac{P(t_k \leq T &lt; t_{k+1} \mid T \geq t_k)}{h_k} = \frac{f(t_k)}{S(t_k)}
 \]</span></p>
-<p>Where <span class="math inline">\(f(t_k)\)</span> is the probability density function (PDF) of <span class="math inline">\(T\)</span> at time <span class="math inline">\(t_k\)</span>.</p>
-</section>
-<section id="continuous-case" class="level3">
-<h3 class="anchored" data-anchor-id="continuous-case">4.3 Continuous Case</h3>
-<p>In the continuous case, the hazard function <span class="math inline">\(\lambda(t)\)</span> is defined as:</p>
+<p>For the continuous case, the hazard function is:</p>
 <p><span class="math display">\[
 \lambda(t) = \lim_{\Delta t \to 0} \frac{P(t \leq T &lt; t + \Delta t \mid T \geq t)}{\Delta t} = \frac{f(t)}{S(t)}
 \]</span></p>
-<p>The hazard function represents the instantaneous failure rate at time <span class="math inline">\(t\)</span> given survival until time <span class="math inline">\(t\)</span>.</p>
-<p>The relationship between the hazard function and the survival function is:</p>
+<p>Thus, the relationship between the hazard function and the survival function is:</p>
 <p><span class="math display">\[
 \lambda(t) = -\frac{d}{dt} \log S(t)
 \]</span></p>
-<p>Which implies that:</p>
+<p>Which implies:</p>
 <p><span class="math display">\[
 S(t) = e^{-\int_0^t \lambda(u) du}
 \]</span></p>
 </section>
-<section id="likelihood-function-for-censored-data" class="level3">
-<h3 class="anchored" data-anchor-id="likelihood-function-for-censored-data">4.4 Likelihood Function for Censored Data</h3>
-<p>For censored data, the likelihood function can be expressed as:</p>
+<section id="likelihood-and-censoring" class="level3">
+<h3 class="anchored" data-anchor-id="likelihood-and-censoring">Likelihood and Censoring</h3>
+<p>For censored data, the likelihood function becomes:</p>
 <p><span class="math display">\[
 L = \prod_{i=1}^{n} \left[ \lambda(t_i) \right]^{\delta_i} \left[ S(t_i) \right]^{1 - \delta_i}
 \]</span></p>
-<p>Where: - <span class="math inline">\(\delta_i = 1\)</span> if the event is observed (failure), - <span class="math inline">\(\delta_i = 0\)</span> if censored.</p>
-<p>This likelihood can be maximized to estimate the coefficients <span class="math inline">\(\beta\)</span> in the Cox model.</p>
-</section>
-<section id="section" class="level3">
-<h3 class="anchored" data-anchor-id="section">4.5</h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load necessary libraries</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(survival)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(survminer)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Example data: Lung cancer survival dataset</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(lung)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>lung<span class="sc">$</span>sex <span class="ot">&lt;-</span> <span class="fu">factor</span>(lung<span class="sc">$</span>sex, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Male"</span>, <span class="st">"Female"</span>))</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Kaplan-Meier survival curve</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>km_fit <span class="ot">&lt;-</span> <span class="fu">survfit</span>(<span class="fu">Surv</span>(time, status) <span class="sc">~</span> sex, <span class="at">data =</span> lung)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsurvplot</span>(km_fit, <span class="at">data =</span> lung, <span class="at">pval =</span> <span class="cn">TRUE</span>, <span class="at">conf.int =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>           <span class="at">risk.table =</span> <span class="cn">TRUE</span>, <span class="at">ggtheme =</span> <span class="fu">theme_minimal</span>())</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Log-rank test to compare survival between Male and Female</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>log_rank_test <span class="ot">&lt;-</span> <span class="fu">survdiff</span>(<span class="fu">Surv</span>(time, status) <span class="sc">~</span> sex, <span class="at">data =</span> lung)</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(log_rank_test)</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Cox Proportional Hazards Model</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>cox_model <span class="ot">&lt;-</span> <span class="fu">coxph</span>(<span class="fu">Surv</span>(time, status) <span class="sc">~</span> sex <span class="sc">+</span> age <span class="sc">+</span> ph.ecog, <span class="at">data =</span> lung)</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(cox_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-</section>
-</section>
-<section id="references-of-relavent-paper" class="level1 unnumbered">
+<p>Where <span class="math inline">\(\delta_i = 1\)</span> if the event is observed and <span class="math inline">\(\delta_i = 0\)</span> if censored.</p>
 
 
 </section>
+</section>
+</section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References of relavent paper</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-cox1972" class="csl-entry" role="listitem">
-Cox, David R. 1972. <span>“Regression Models and Life<span>-</span>Tables.”</span> <em>Journal of the Royal Statistical Society: Series B (Methodological)</em> 34 (2): 187–202.
-</div>
-</div></section></div></main>
-<!-- /main column -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

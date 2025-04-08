@@ -1,0 +1,29 @@
+project:
+  type: website
+  output-dir: docs
+  
+website: 
+  title: "2024 summer SURF---Survival Analysis in Poisoning"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Homepage
+      - href: https://yutong04.github.io
+        text: our work  
+      - href: surf2024.html
+        text: codes
+      - href: distribution transformation.qmd
+        text: Mathematical Statistics
+
+      
+      #- href: sequence.qmd
+       # text: sequence
+      #- href: Lagrange.qmd
+       # text: lasso and Lagrange method
+      #- href: understand directional derivative deeply.qmd
+        #text: Directional Derivative
+      
+format: 
+  html: 
+    theme: cosmo
+    toc: true
