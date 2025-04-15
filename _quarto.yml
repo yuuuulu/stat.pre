@@ -3,15 +3,15 @@ project:
   output-dir: docs
   
 website: 
-  title: "2024 summer SURF---Survival Analysis in Poisoning"
+  title: "Notes and Projects about Statistics😄"
   navbar:
     left:
       - href: index.qmd
-        text: Homepage
+        text: 2024 summer SURF---Survival Analysis in Poisoning
       - href: https://yutong04.github.io
-        text: our work  
+        text: our work of 2024 summer SURF
       - href: surf2024.html
-        text: codes
+        text: codes of 2024 summer SURF
       - href: distribution transformation.qmd
         text: Mathematical Statistics
 
