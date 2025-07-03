@@ -6,6 +6,8 @@ website:
   title: "Notes and Projects about Statistics😄"
   navbar:
     left:
+      - href: https://yuuuulu.github.io/
+        text: yuuuulu homepage
       - href: index.qmd
         text: 2024 summer SURF---Survival Analysis in Poisoning
       - href: https://yutong04.github.io
@@ -17,7 +19,7 @@ website:
       - href: SurveySampling.qmd
         text: Survey Sampling
       - href: APH103_Final_Report.pdf
-        text: Survey Sampling Final Report
+        text: Survey Sampling Report with codes
       
       #- href: sequence.qmd
        # text: sequence
