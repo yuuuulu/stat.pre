@@ -14,7 +14,10 @@ website:
         text: codes of 2024 summer SURF
       - href: distribution transformation.qmd
         text: Mathematical Statistics
-
+      - href: SurveySampling.qmd
+        text: Survey Sampling
+      - href: APH103_Final_Report.pdf
+        text: Survey Sampling Final Report
       
       #- href: sequence.qmd
        # text: sequence
