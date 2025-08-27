@@ -1,5 +1,6 @@
 ---
 title: "Survival Analysis in Poisoning"
+format: html
 editor: visual
 ---
 

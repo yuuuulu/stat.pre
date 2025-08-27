@@ -10,14 +10,14 @@ website:
         text: yuuuulu homepage
       - href: index.qmd
         text: Practice Project List
-      - href: SURF2024.qmd
-        text: SURF 2024
       - href: https://yuuuulu.github.io/MathematicalModeling2025/
         text: 2025 MMC
       - href: https://yuuuulu.github.io/mixed-model-repeated-measures-depression-clinical-data/
         text: Biostat contest using Mixed Model
       - href: 2421874.pdf
         text: 2024 MMC
+      - href: 2024surf.qmd
+        text: SURF 2024
       - href: https://yuuuulu.github.io/2025SURF/
         text: SURF2025
       - href: distribution transformation.qmd
