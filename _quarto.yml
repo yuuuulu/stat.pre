@@ -9,11 +9,17 @@ website:
       - href: https://yuuuulu.github.io/
         text: yuuuulu homepage
       - href: index.qmd
-        text: 2024 summer SURF---Survival Analysis in Poisoning
-      - href: https://yutong04.github.io
-        text: our work of 2024 summer SURF
-      - href: surf2024.html
-        text: codes of 2024 summer SURF
+        text: Practice Project List
+      - href: SURF2024.qmd
+        text: 2024 summer SURF
+      - href: https://yuuuulu.github.io/MathematicalModeling2025/
+        text: 2025 MMC
+      - href: https://yuuuulu.github.io/mixed-model-repeated-measures-depression-clinical-data/
+        text: Biostat contest using Mixed Model
+      - href: 2421874.pdf
+        text: 2024 MMC
+      - href: https://yuuuulu.github.io/2025SURF/
+        text: SURF2025
       - href: distribution transformation.qmd
         text: Mathematical Statistics
       - href: SurveySampling.qmd

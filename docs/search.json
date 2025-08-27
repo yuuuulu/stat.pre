@@ -579,5 +579,12 @@
     "title": "Survival Analysis in Poisoning",
     "section": "2. Codes for Model 2 : Cox Proportional Hazards (coxph) - Backward Selection",
     "text": "2. Codes for Model 2 : Cox Proportional Hazards (coxph) - Backward Selection\n# 加载必要的包\nlibrary(readxl)\nlibrary(dplyr)\nlibrary(survival)  # 用于Cox回归模型\nlibrary(Hmisc)  # 用于计算C-index\n\n# 读取数据\ndata &lt;- read_excel(\"/Users/liyutong/Desktop/Book2.xlsx\", skip = 1)\n\n# 定义新的数值变量和二值变量\nnumeric_vars &lt;- c(\"dosage_liquid_1\", \"age\")\nbinary_vars &lt;- c(\"sex\", \"mental_health_illness\", \"hypertension\", \"history_of_past_mental_health_disease\", \n                 \"airway\", \"CPR\", \"intubation_or_ventilation\", \"induced_vomiting_or_catharsis\", \n                 \"vasoactive_drugs\", \"activated_carbon\", \"gastric_lavage\", \"ECTR\")\n\n# 转换二值变量并确保其他变量为数值型\n#data[binary_vars] &lt;- lapply(data[binary_vars], function(x) as.numeric(as.factor(x)) - 1)\ndata$censor &lt;- as.numeric(data$censor)\n\n# 确保数值型变量为数值型\ndata[numeric_vars] &lt;- lapply(data[numeric_vars], as.numeric)\ndata[binary_vars] &lt;-lapply(data[binary_vars], as.factor)\nstr(data)\n# 去除包含缺失值的行\ndata &lt;- na.omit(data[, c(\"survival_time\", \"censor\", binary_vars, numeric_vars)])\n\n# 全模型公式\nfull_formula &lt;- as.formula(paste(\"Surv(survival_time, censor) ~\", paste(c(binary_vars, numeric_vars), collapse = \" + \")))\n\n# 拟合全模型\nfull_model &lt;- coxph(full_formula, data = data)\n\n# 使用后向逐步回归简化模型\nbackward_model &lt;- step(full_model, direction = \"backward\")\n\n# 算c_index\nsummary_model &lt;- summary(backward_model)\nbackward_model$concordance"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Practice Project List",
+    "section": "",
+    "text": "Thanks to the wonderful learning resourses at XJTLU including sophisticated and kind teachers, frinends and senior students, I have lots of opportunities to practice in the real project to apply the knowledge.\n\n2024 Mathematical Modeling Contest\n2024 SURF\n2024 Coding Practice with application to … tb\n2024 Bayesian seminar-2025 em\n2025 Mathematical Modeling Contest\n2025 Biomedical Statistics Contest at XJTLU\n2025 APH103 (Survey Sampling) Final Project\n2025 SURF\n\n…"
   }
 ]
