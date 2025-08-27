@@ -10,8 +10,8 @@ website:
         text: yuuuulu homepage
       - href: index.qmd
         text: Practice Project List
-      - href: SURF2024.html
-        text: SURF2024
+      - href: SURF2024.qmd
+        text: SURF 2024
       - href: https://yuuuulu.github.io/MathematicalModeling2025/
         text: 2025 MMC
       - href: https://yuuuulu.github.io/mixed-model-repeated-measures-depression-clinical-data/

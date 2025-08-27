@@ -3,7 +3,6 @@ title: "Survival Analysis in Poisoning"
 editor: visual
 ---
 
-
 # Abstract
 
 Pesticide poisoning remains a significant public health concern worldwide, particularly in developing regions where regulatory controls are less stringent. Each year, millions of cases arise from the misuse, overuse, or intentional ingestion of pesticides, presenting substantial threats to individual health and imposing significant burdens on public health systems. This study analyzed a cohort of hospitalized pesticide poisoning patients, collecting important demographic, clinical, and biochemical variables. Using the methods of Cox-Lasso and backward Cox, the most relevant variables were identified, analyzed, and interpreted. The findings revealed several important factors related to the survival outcomes of pesticide poisoning cases, including cardiopulmonary resuscitation (CPR), intubation or ventilation, vasoactive drugs, age and the dosage of the ingested liquid, and obtained a well-fitting model: sex + CPR + intubation_or_ventilation + vasoactive_drugs + dosage_liquid_1 + age. These factors are relatively significant in variable selection, providing important insights into patient management and intervention strategies.
