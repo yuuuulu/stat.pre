@@ -22,4 +22,6 @@ editor: visual
 
 - 2025 SURF
 
+- 2026 Operational Research MIP-Algorithm-Design Project
+
 ...
