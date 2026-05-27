@@ -9,7 +9,7 @@ editor: visual
 
 # Report
 
-[Click here to see our report](https://github.com/yuuuulu/stat.pre/MTH203_report.pdf)
+[Click here to see our report](https://github.com/yuuuulu/stat.pre/blob/main/MTH203_report.pdf)
 
 # Algorithm code
 
