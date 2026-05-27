@@ -4,7 +4,7 @@ format: html
 editor: visual
 ---
 
-# Thanks to Dr. Haojin Zhou for teaching me this course.
+# Thanks to Dr. Ying Chen for teaching me this course.
 
 # Reference Book:
 

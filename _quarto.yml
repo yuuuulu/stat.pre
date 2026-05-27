@@ -22,10 +22,10 @@ website:
         text: SURF2025
       - href: distribution transformation.qmd
         text: Mathematical Statistics
-      - href: SurveySampling.qmd
-        text: Survey Sampling
-      - href: APH103_Final_Report.pdf
-        text: Survey Sampling Report with codes
+      - href: MTH203Project.qmd
+        text: MIP-Algorithm-Development
+     ## - href: APH103_Final_Report.pdf
+       # text: Survey Sampling Report with codes
       
       #- href: sequence.qmd
        # text: sequence
